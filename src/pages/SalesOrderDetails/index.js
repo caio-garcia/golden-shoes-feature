@@ -1,6 +1,10 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+import { Space, Table, Tag } from "antd";
+
+import columns from "./columns";
 
 export function SalesOrderDetail() {
   const { orderId } = useParams();
@@ -27,27 +31,47 @@ export function SalesOrderDetail() {
     fetchOrderDetails();
   }, []);
 
+  const dataSource = lines
+    .filter((elem) => {
+      return elem["Order No"] == order["Order No"];
+    })
+    .map((curr, index) => {
+      let tkey;
+      let imgURL;
+      delete curr._id;
+      tkey = index + 1;
+      imgURL = (
+        <img
+          src={curr.imgURL}
+          alt={curr.ProductName}
+          style={{ width: "10rem", borderRadius: "8px" }}
+        />
+      );
+      return { ...curr, key: tkey, imgURL: imgURL };
+    });
+
   return loading ? (
     <h1>Loading</h1>
   ) : (
     <>
-      <h1>Nene</h1>
-      {lines
-        .filter((elem) => {
-          return elem["Order No"] == order["Order No"];
-        })
-        .map((currElem, index) => {
-          return (
-            <>
-              <div key={index}>
-                <h1>{currElem["ProductName"]}</h1>
-                <h1>{currElem["Quantity"]}</h1>
-                <h1>{currElem["Amount"]}</h1>
-                <img src={currElem["imgURL"]} alt={currElem["ProductId"]} />
-              </div>
-            </>
-          );
-        })}
+      <div style={{ margin: "1.6rem" }}>
+        <div style={{ marginBottom: "2rem" }}>
+          <h2>Order No.: {order["Order No"]}</h2>
+          <p>Date: {order["Order Date"]}</p>
+          <p>Shipping Status: {order["Shipping Status"]}</p>
+          <p>Total: £{order["Total"]}</p>
+        </div>
+        <div>
+          <Table columns={columns} dataSource={dataSource} />
+        </div>
+        <div>
+          <h3>Issues with this Order?</h3>
+
+          <Link to={`/incident/${order["Order No"]}`}>
+            <p>Contact us</p>
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

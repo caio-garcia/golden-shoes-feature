@@ -3,6 +3,9 @@ import { Routes, Route } from "react-router-dom";
 
 import { SalesOrders } from "./pages/SalesOrders";
 import { SalesOrderDetail } from "./pages/SalesOrderDetails";
+import { IncidentPage } from "./pages/IncidentForm";
+import { Incidents } from "./pages/Incidents";
+import { IncidentDetail } from "./pages/IncidentDetails";
 
 function App() {
   return (
@@ -10,6 +13,9 @@ function App() {
       <Routes>
         <Route path="/my-orders" element={<SalesOrders />} />
         <Route path="/order-details/:orderId" element={<SalesOrderDetail />} />
+        <Route path="/incident/:orderNo" element={<IncidentPage />} />
+        <Route path="/incidents" element={<Incidents />} />
+        <Route path="/incident-details/:_id" element={<IncidentDetail />} />
       </Routes>
     </>
   );

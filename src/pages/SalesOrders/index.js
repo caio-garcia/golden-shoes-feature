@@ -27,7 +27,7 @@ export function SalesOrders() {
   ) : (
     <>
       <h1>You Orders</h1>
-      <div style={{ display: "flex", gap: "2rem" }}>
+      <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
         {orders.map((currElem, index) => {
           return (
             <div key={index}>

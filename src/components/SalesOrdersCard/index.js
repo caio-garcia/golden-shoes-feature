@@ -18,7 +18,7 @@ export function SalesOrdersCard(props) {
       <Card
         title={orderNo}
         extra={<Link to={`/order-details/${orderID}/`}> More Details</Link>}
-        style={{ width: "20rem" }}
+        style={{ width: "25rem", fontSize: "1.2rem" }}
       >
         <p>
           <strong>Order Date: </strong>
