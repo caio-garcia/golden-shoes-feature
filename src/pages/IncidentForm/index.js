@@ -7,7 +7,7 @@ export function IncidentPage() {
 
   return (
     <>
-      <div style={{ margin: "1.8rem" }}>
+      <div style={{ margin: "5rem" }}>
         <div style={{ marginBottom: "1.2rem" }}>
           <h1>New Customer Service Request</h1>
           <span>
