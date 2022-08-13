@@ -26,7 +26,7 @@ export function Incidents() {
     <h1>Loading</h1>
   ) : (
     <>
-      <div style={{ margin: "1.8rem" }}>
+      <div style={{ margin: "5rem" }}>
         <h1>List of Incidents</h1>
         {incidents.map((currElem, index) => {
           return (

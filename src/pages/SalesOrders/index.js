@@ -26,21 +26,23 @@ export function SalesOrders() {
     <h1>Loading</h1>
   ) : (
     <>
-      <h1>You Orders</h1>
-      <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
-        {orders.map((currElem, index) => {
-          return (
-            <div key={index}>
-              <SalesOrdersCard
-                orderID={currElem._id}
-                orderNo={`Order No. ${currElem["Order No"]}`}
-                orderDate={`${currElem["Order Date"]}`}
-                shippingStatus={`${currElem["Shipping Status"]}`}
-                total={`${currElem["Total"]}`}
-              />
-            </div>
-          );
-        })}
+      <div style={{ margin: "5rem" }}>
+        <h1>You Orders</h1>
+        <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
+          {orders.map((currElem, index) => {
+            return (
+              <div key={index}>
+                <SalesOrdersCard
+                  orderID={currElem._id}
+                  orderNo={`Order No. ${currElem["Order No"]}`}
+                  orderDate={`${currElem["Order Date"]}`}
+                  shippingStatus={`${currElem["Shipping Status"]}`}
+                  total={`${currElem["Total"]}`}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

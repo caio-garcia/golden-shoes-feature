@@ -54,7 +54,7 @@ export function SalesOrderDetail() {
     <h1>Loading</h1>
   ) : (
     <>
-      <div style={{ margin: "1.6rem" }}>
+      <div style={{ margin: "5rem" }}>
         <div style={{ marginBottom: "2rem" }}>
           <h2>Order No.: {order["Order No"]}</h2>
           <p>Date: {order["Order Date"]}</p>

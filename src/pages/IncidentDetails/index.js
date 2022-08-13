@@ -89,7 +89,7 @@ export function IncidentDetail() {
     <h1>Loading...</h1>
   ) : (
     <>
-      <div style={{ margin: "1.8rem" }}>
+      <div style={{ margin: "5rem" }}>
         <div>
           <h2>Incident for Order No.: {incident["tempOrderNo"]}</h2>
           <p>
