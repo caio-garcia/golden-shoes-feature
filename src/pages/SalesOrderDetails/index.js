@@ -64,7 +64,7 @@ export function SalesOrderDetail() {
         <div>
           <Table columns={columns} dataSource={dataSource} />
         </div>
-        <div>
+        <div style={{ paddingBottom: "1.2rem" }}>
           <h3>Issues with this Order?</h3>
 
           <Link to={`/incident/${order["Order No"]}`}>
