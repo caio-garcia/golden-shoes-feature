@@ -17,8 +17,6 @@ export function IncidentForm(props) {
     comments: [],
   });
 
-  const sendOver = async () => {};
-
   function handleChangeCategory(e) {
     setForm({ ...form, issueCategory: e });
   }
@@ -33,7 +31,6 @@ export function IncidentForm(props) {
         "https://ironrest.herokuapp.com/sales-comments",
         form
       );
-      console.log(res);
       navigate("/my-orders");
     } catch (error) {
       console.log(error);

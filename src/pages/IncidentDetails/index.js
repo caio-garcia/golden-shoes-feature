@@ -47,7 +47,6 @@ export function IncidentDetail() {
 
   const commitComment = async () => {
     delete incident._id;
-    console.log(incident);
     try {
       const send = await axios.put(
         `https://ironrest.herokuapp.com/sales-comments/${_id}`,
@@ -70,7 +69,6 @@ export function IncidentDetail() {
     });
     setTimeout(() => {
       commitComment();
-      console.log(incident);
     }, 1000);
   }
 
