@@ -2,6 +2,7 @@ import "antd/dist/antd.css";
 import { Routes, Route } from "react-router-dom";
 
 import { NavBar } from "./components/NavBar";
+import { Home } from "./pages/Home";
 import { SalesOrders } from "./pages/SalesOrders";
 import { SalesOrderDetail } from "./pages/SalesOrderDetails";
 import { IncidentPage } from "./pages/IncidentForm";
@@ -13,6 +14,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/my-orders" element={<SalesOrders />} />
         <Route path="/order-details/:orderId" element={<SalesOrderDetail />} />
         <Route path="/incident/:orderNo" element={<IncidentPage />} />
