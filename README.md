@@ -8,6 +8,10 @@ It has been coded in React and utilized an open API.
 
 [Golden Shoe's Digital Transformation](https://docs.google.com/presentation/d/1CwTFIS1MO2ZoPkdZm2qV2RvmL5OsQ0E4fQGXxK8WL9U/edit?usp=sharing)
 
+### Live deployment
+
+[Golden Shoe](https://golden-shoes-feature.netlify.app/my-orders)
+
 ### Front-end repo
 
 [golden-shoes-feature](https://github.com/caio-garcia/golden-shoes-feature)
